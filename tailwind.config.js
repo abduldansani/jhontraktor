@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         primary: "#FF7420",
+        primaryLight: "#EE8420",
         secondary: "#191A19",
       },
       fontSize: {
@@ -26,5 +27,17 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".no-scrollbar::-webkit-scrollbar": {
+          display: "none",
+        },
+        ".no-scrollbar": {
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+        },
+      });
+    },
+  ],
 };

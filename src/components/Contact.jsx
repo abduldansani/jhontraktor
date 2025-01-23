@@ -1,11 +1,9 @@
-import contact_img from "../assets/images/contact-img.png";
-import check_circle from "../assets/icons/check-circle.svg";
-import chevron_down from "../assets/icons/chevron_down_gray.svg";
+import { check_c, chevron_d, chevron_d_gray, contact_img } from "../assets";
 
 const Contact = () => {
   return (
     <section
-      className="bg-secondary"
+      className="bg-secondary bg-no-repeat bg-center bg-cover"
       style={{ backgroundImage: `url(${contact_img})` }}
     >
       <div className="bg-gradient-to-b from-[#191A19] to-[rgba(0,0,0, 0%)] py-8">
@@ -16,14 +14,14 @@ const Contact = () => {
           <div className="flex items-center justify-center gap-8 flex-wrap">
             {benefits.map((benefit, i) => (
               <div key={i} className="flex gap-4">
-                <img src={check_circle} alt="" />
+                <img src={check_c} alt="" />
                 <p className="text-size-14 sm:text-size-16 md:text-size-24 font-medium">
                   {benefit}
                 </p>
               </div>
             ))}
           </div>
-          <div className="flex gap-10 flex-col md:flex-row">
+          <div className="flex gap-10 md:max-xl:gap-6 max-md:flex-col">
             <div className="md:w-2/3 rounded-2xl bg-primary p-10">
               <p className="text-size-24 mb-6 font-medium">Request A Quote</p>
               <p className="text-size-20 mb-5">
@@ -33,29 +31,30 @@ const Contact = () => {
               </p>
               <form>
                 <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-5">
-                  {inputs.map((input, i) => (
-                    <>
-                      {input.type === "text" ? (
-                        <input
-                          type="text"
-                          className="py-4 lg:py-6 px-6 lg:px-10 text-black focus:outline-secondary rounded-[15px] xl:text-size-20 w-full"
-                          placeholder={input.name}
-                        />
-                      ) : (
-                        <div className="py-4 lg:py-6 px-6 lg:px-10 flex justify-between gap-4 items-center rounded-[15px] bg-white">
-                          <div className="text-secondary opacity-50 xl:text-size-20">
-                            Select Your Service
-                          </div>
-                          <img
-                            src={chevron_down}
-                            alt=""
-                            className="w-[30px] h-[30px]"
-                          />
+                  {inputs.map((input, i) =>
+                    input.type === "text" ? (
+                      <input
+                        key={i}
+                        type="text"
+                        className="py-4 lg:py-6 px-6 lg:px-10 text-black focus:outline-secondary rounded-[15px] xl:text-size-20 w-full"
+                        placeholder={input.name}
+                      />
+                    ) : (
+                      <div
+                        key={i}
+                        className="py-4 lg:py-6 px-6 lg:px-10 flex justify-between gap-4 items-center rounded-[15px] bg-white"
+                      >
+                        <div className="text-secondary opacity-50 xl:text-size-20 text-nowrap">
+                          Select Your Service
                         </div>
-                        // <div className="py-6 px-10 text-black focus:outline-secondary rounded-[15px] bg-white"></div>
-                      )}
-                    </>
-                  ))}
+                        <img
+                          src={chevron_d_gray}
+                          alt=""
+                          className="w-[30px] h-[30px]"
+                        />
+                      </div>
+                    )
+                  )}
                   <textarea
                     name=""
                     id=""
