@@ -7,7 +7,7 @@ const Hero = () => {
       style={{ backgroundImage: `url(${hero_img})` }}
     >
       <div className="container mx-auto px-4 flex flex-col gap-10 lg:gap-16">
-        <h1 className="text-size-48 lg:text-size-64 font-semibold">
+        <h1 className="text-size-48 lg:text-size-64 font-semibold leading-tight lg:leading-snug">
           We Prepare <br className="max-md:hidden" />
           For The <span className="text-primary">Future</span>
         </h1>
@@ -16,13 +16,13 @@ const Hero = () => {
           building maintance services for you.
         </p>
         <div className="flex gap-4 md:gap-6">
-          <button className="flex gap-1 md:gap-2.5 items-center py-2 px-4 md:py-[15px] md:px-[30px] bg-primary hover:bg-primaryLight rounded-[15px]">
-            <div className="text-size-16 md:text-size-24 font-medium">
+          <button className="max-md:w-full flex gap-1 md:gap-2.5 items-center justify-center py-2 px-4 md:py-[15px] md:px-[30px] bg-primary hover:bg-primaryLight rounded-[15px]">
+            <div className="text-sm md:text-base lg:text-size-24 font-medium">
               Our Services
             </div>
             <img src={arrow_rc} alt="" className="w-[25px] h-[25px] " />
           </button>
-          <button className=" py-[15px] px-[30px] bg-white hover:bg-orange-100 text-black rounded-[15px] text-size-16 md:text-size-24 font-medium">
+          <button className="max-md:w-full py-2 px-4 md:py-[15px] md:px-[30px] bg-white hover:bg-orange-100 text-black rounded-[15px] text-sm md:text-base lg:text-size-24 font-medium">
             View Project
           </button>
         </div>

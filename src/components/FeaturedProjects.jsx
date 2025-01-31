@@ -4,6 +4,8 @@ import { categoryLinks, projects } from "../constants/projects";
 import ProjectCard from "./ProjectCard";
 import Steps from "./Steps";
 
+import { motion } from "motion/react";
+
 const FeaturedProjects = () => {
   const [filter, setFilter] = useState("All Works");
   const displayedProjects =
@@ -11,7 +13,13 @@ const FeaturedProjects = () => {
       ? projects
       : projects.filter((project) => project.category.includes(filter));
   return (
-    <section className="bg-primary pt-12 pb-24">
+    <motion.section
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="bg-primary pt-12 pb-24"
+    >
       <div className="container mx-auto px-4">
         <Steps />
         <div className="mt-16 flex flex-col lg:flex-row lg:items-center justify-between gap-4 lg:gap-10">
@@ -46,7 +54,7 @@ const FeaturedProjects = () => {
           <img src={arrow_rc} alt="" />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

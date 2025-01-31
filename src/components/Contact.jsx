@@ -1,8 +1,14 @@
 import { check_c, chevron_d, chevron_d_gray, contact_img } from "../assets";
 
+import { motion } from "motion/react";
+
 const Contact = () => {
   return (
-    <section
+    <motion.section
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
       className="bg-secondary bg-no-repeat bg-center bg-cover"
       style={{ backgroundImage: `url(${contact_img})` }}
     >
@@ -21,30 +27,32 @@ const Contact = () => {
               </div>
             ))}
           </div>
-          <div className="flex gap-10 md:max-xl:gap-6 max-md:flex-col">
-            <div className="md:w-2/3 rounded-2xl bg-primary p-10">
-              <p className="text-size-24 mb-6 font-medium">Request A Quote</p>
-              <p className="text-size-20 mb-5">
+          <div className="flex gap-10 md:max-xl:gap-6 max-lg:flex-col">
+            <div className="lg:w-2/3 rounded-2xl bg-primary p-5 md:p-10">
+              <p className="text-size-24 mb-4 md:mb-6 font-medium">
+                Request A Quote
+              </p>
+              <p className="text-size-16 md:text-size-20 mb-5">
                 Complete control over products allow us to our customers the
                 best quality prices and services. We take great pride in
                 everything that we do in Jhontraktor{" "}
               </p>
-              <form>
-                <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-5">
+              <form onSubmit={(e) => e.preventDefault()}>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-2 lg:gap-5">
                   {inputs.map((input, i) =>
                     input.type === "text" ? (
                       <input
                         key={i}
                         type="text"
-                        className="py-4 lg:py-6 px-6 lg:px-10 text-black focus:outline-secondary rounded-[15px] xl:text-size-20 w-full"
+                        className="py-4 lg:py-6 px-6 lg:px-10 text-black focus:outline-secondary rounded-[15px] text-base xl:text-size-20 w-full"
                         placeholder={input.name}
                       />
                     ) : (
-                      <div
+                      <button
                         key={i}
                         className="py-4 lg:py-6 px-6 lg:px-10 flex justify-between gap-4 items-center rounded-[15px] bg-white"
                       >
-                        <div className="text-secondary opacity-50 xl:text-size-20 text-nowrap">
+                        <div className="text-secondary opacity-50 text-base xl:text-size-20 text-nowrap">
                           Select Your Service
                         </div>
                         <img
@@ -52,14 +60,14 @@ const Contact = () => {
                           alt=""
                           className="w-[30px] h-[30px]"
                         />
-                      </div>
+                      </button>
                     )
                   )}
                   <textarea
                     name=""
                     id=""
                     placeholder="Additional Details!"
-                    className="py-6 px-10 h-36 text-black focus:outline-secondary rounded-[15px] sm:col-span-2  md:col-span-1 lg:col-span-2 xl:text-size-20"
+                    className="py-4 lg:py-6 px-6 lg:px-10 h-36 text-black focus:outline-secondary rounded-[15px] sm:col-span-2 lg:col-span-2 text-base xl:text-size-20"
                   ></textarea>
                 </div>
                 <button className="bg-secondary py-4 lg:py-6 text-size-20 rounded-[15px] mt-4 lg:mt-6 w-full">
@@ -67,7 +75,7 @@ const Contact = () => {
                 </button>
               </form>
             </div>
-            <div className="p-10 rounded-2xl bg-primary flex-1 flex flex-col justify-between">
+            <div className="p-5 md:p-10 rounded-2xl bg-primary flex-1 flex flex-col justify-between">
               <p className="text-size-24 font-medium">Contact Info</p>
               <div className="space-y-6">
                 <div className="space-y-1">
@@ -112,7 +120,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,9 +1,16 @@
 import { about_img, check_c } from "../assets";
 import { assuarance, stats } from "../constants/about";
+import { motion } from "motion/react";
 
 const About = () => {
   return (
-    <section className="bg-secondary">
+    <motion.section
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="bg-secondary"
+    >
       <div className="container mx-auto px-2 xl:px-10 flex flex-col gap-28">
         <div className="flex justify-between md:gap-10 items-end md:-translate-y-1/2 flex-col-reverse md:flex-row">
           <div className="gap-4 md:gap-8 -mt-16 flex justify-between w-full md:w-fit">
@@ -36,7 +43,7 @@ const About = () => {
         <div className="flex flex-col-reverse lg:flex-row gap-10 lg:gap-4 xl:gap-32 -mt-10 md:-mt-32">
           <img src={about_img} alt="" className="shrink-0" />
           <div className="space-y-4 pb-20">
-            <div className="text-size-48 lg:text-size-64 font-semibold">
+            <div className="text-size-48 lg:text-size-64 font-semibold leading-tight lg:leading-snug">
               <span className="text-primary">25 years</span>{" "}
               <br className="max-xl:hidden" />
               of experience!
@@ -63,7 +70,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

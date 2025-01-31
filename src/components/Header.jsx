@@ -6,9 +6,10 @@ import { chevron_d, close, menu, world } from "../assets";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
-      <header className="z-10 sticky top-0 h-[100px] bg-secondary flex items-center justify-center">
+      <header className="z-10 sticky top-0 h-20 md:h-[100px] bg-secondary flex items-center justify-center">
         <div className="container mx-auto px-4 flex justify-between items-center text-size-16 lg:text-size-18 xl:text-size-24 font-medium">
           <Logo size="large" colored={true} />
           <nav className="hidden md:flex gap-2 lg:gap-4 xl:gap-6">

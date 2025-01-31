@@ -1,7 +1,7 @@
 import { chevron_d_black, world_black } from "../assets";
 const MobileMenu = () => {
   return (
-    <div className="md:hidden fixed top-[105px] z-50 w-screen">
+    <div className="md:hidden fixed top-[84px] z-50 w-screen">
       <div className=" flex justify-end container mx-auto px-2">
         <div className="w-fit p-6 bg-white text-black z-10 right-2 rounded-[15px] font-medium shadow-xl">
           <div className="flex gap-2 items-center mb-6">

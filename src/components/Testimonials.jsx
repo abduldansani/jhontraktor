@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { testimonials } from "../constants/testimonials";
 import { chevron_l, chevron_r } from "../assets";
+
+import { motion } from "motion/react";
+
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
 
@@ -17,7 +20,13 @@ const Testimonials = () => {
   const disableNext = current === testimonials.length - 1;
 
   return (
-    <section className="py-10 bg-secondary">
+    <motion.section
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="py-10 bg-secondary"
+    >
       <div className="container mx-auto px-4 2xl:px-10 flex flex-col gap-10 items-center">
         <div className="text-size-24 sm:text-size-28 font-semibold text-primary">
           What Our Client Says
@@ -102,7 +111,7 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
