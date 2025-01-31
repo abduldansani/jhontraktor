@@ -7,5 +7,5 @@
 @tailwind utilities;
 
 html {
-  @apply font-poppins text-white bg-secondary;
+  @apply bg-secondary font-poppins text-white;
 }

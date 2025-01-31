@@ -4,26 +4,26 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <section className="bg-secondary pt-10 pb-4">
-      <footer className="container mx-auto px-4 space-y-7">
-        <div className="flex gap-4 max-lg:flex-col justify-between">
+    <section className="bg-secondary pb-4 pt-10">
+      <footer className="container mx-auto space-y-7 px-4">
+        <div className="flex justify-between gap-4 max-lg:flex-col">
           <Logo />
-          <div className="flex flex-col md:flex-row md:items-center gap-2">
+          <div className="flex flex-col gap-2 md:flex-row md:items-center">
             <p className="text-size-16 sm:text-size-20">
               Subscribe To Our Newslatter :
             </p>
-            <div className="border-b-2 flex h-fit items-center gap-2 w-fit">
+            <div className="flex h-fit w-fit items-center gap-2 border-b-2">
               <input
                 type="email"
                 placeholder="Enter your email addres"
-                className="focus:outline-none bg-transparent text-size-16 p-1"
+                className="bg-transparent p-1 text-size-16 focus:outline-none"
               />
-              <img src={arrow_r} alt="" className="w-[15px] h-[15px]" />
+              <img src={arrow_r} alt="" className="h-[15px] w-[15px]" />
             </div>
           </div>
         </div>
 
-        <div className="flex justify-between flex-col gap-8 md:flex-row">
+        <div className="flex flex-col justify-between gap-8 md:flex-row">
           <div className="space-y-3 md:w-1/2 lg:w-1/3">
             <p className="text-size-20 font-medium">About Us</p>
             <p className="text-size-16">
@@ -32,7 +32,7 @@ const Footer = () => {
               have and the high-quality materials we use and structured work
               techniques, we will be able to realize timely completion of work.
             </p>
-            <div className="flex gap-4 items-center">
+            <div className="flex items-center gap-4">
               {social.map((social) => (
                 <a key={social.id} href={social.link} target="_blank">
                   <img src={social.img} alt="-" width={30} height={30} />
@@ -60,7 +60,7 @@ const Footer = () => {
               <a href="mailto:contact@jhontraktor.co">contact@jhontraktor.co</a>
             </div>
           </div>
-          <div className="max-lg:hidden space-y-3">
+          <div className="space-y-3 max-lg:hidden">
             <p className="text-size-20 font-medium">Link</p>
             <nav className="flex flex-col gap-2 text-size-16">
               {navLinks.map((link, i) => (
@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <p className="mt-10 opacity-50 text-[12px] text-center">
+      <p className="mt-10 text-center text-[12px] opacity-50">
         Copyright © 2023{" "}
         <a href="https://www.figma.com/@brainstewstudio" target="_blank">
           CandyAP.

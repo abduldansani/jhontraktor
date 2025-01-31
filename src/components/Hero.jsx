@@ -3,26 +3,26 @@ import { arrow_rc, hero_img } from "../assets";
 const Hero = () => {
   return (
     <section
-      className="pt-10 md:pt-24 pb-36 flex items-center bg-no-repeat bg-cover bg-center sm:bg-top lg:bg-right bg-secondary"
+      className="flex items-center bg-secondary bg-cover bg-center bg-no-repeat pb-36 pt-10 sm:bg-top md:pt-24 lg:bg-right"
       style={{ backgroundImage: `url(${hero_img})` }}
     >
-      <div className="container mx-auto px-4 flex flex-col gap-10 lg:gap-16">
-        <h1 className="text-size-48 lg:text-size-64 font-semibold leading-tight lg:leading-snug">
+      <div className="container mx-auto flex flex-col gap-10 px-4 lg:gap-16">
+        <h1 className="text-size-48 font-semibold leading-tight lg:text-size-64 lg:leading-snug">
           We Prepare <br className="max-md:hidden" />
           For The <span className="text-primary">Future</span>
         </h1>
-        <p className="font-medium text-size-18 lg:text-size-20">
+        <p className="text-size-18 font-medium lg:text-size-20">
           We provide the best architectural design, contruction, and <br />
           building maintance services for you.
         </p>
         <div className="flex gap-4 md:gap-6">
-          <button className="max-md:w-full flex gap-1 md:gap-2.5 items-center justify-center py-2 px-4 md:py-[15px] md:px-[30px] bg-primary hover:bg-primaryLight rounded-[15px]">
-            <div className="text-sm md:text-base lg:text-size-24 font-medium">
+          <button className="flex items-center justify-center gap-1 rounded-[15px] bg-primary px-4 py-2 hover:bg-primaryLight max-md:w-full md:gap-2.5 md:px-[30px] md:py-[15px]">
+            <div className="text-sm font-medium md:text-base lg:text-size-24">
               Our Services
             </div>
-            <img src={arrow_rc} alt="" className="w-[25px] h-[25px] " />
+            <img src={arrow_rc} alt="" className="h-[25px] w-[25px]" />
           </button>
-          <button className="max-md:w-full py-2 px-4 md:py-[15px] md:px-[30px] bg-white hover:bg-orange-100 text-black rounded-[15px] text-sm md:text-base lg:text-size-24 font-medium">
+          <button className="rounded-[15px] bg-white px-4 py-2 text-sm font-medium text-black hover:bg-orange-100 max-md:w-full md:px-[30px] md:py-[15px] md:text-base lg:text-size-24">
             View Project
           </button>
         </div>

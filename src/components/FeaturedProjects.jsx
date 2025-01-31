@@ -18,22 +18,22 @@ const FeaturedProjects = () => {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="bg-primary pt-12 pb-24"
+      className="bg-primary pb-24 pt-12"
     >
       <div className="container mx-auto px-4">
         <Steps />
-        <div className="mt-16 flex flex-col lg:flex-row lg:items-center justify-between gap-4 lg:gap-10">
-          <div className="text-size-34 md:text-size-48 2xl:text-size-64 font-semibold text-black text-nowrap">
+        <div className="mt-16 flex flex-col justify-between gap-4 lg:flex-row lg:items-center lg:gap-10">
+          <div className="text-nowrap text-size-34 font-semibold text-black md:text-size-48 2xl:text-size-64">
             Featured Projects
           </div>
-          <div className="flex items-center gap-4 xl:gap-6 overflow-x-scroll no-scrollbar">
+          <div className="flex items-center gap-4 overflow-x-scroll no-scrollbar xl:gap-6">
             {categoryLinks.map((category, i) => (
               <div
                 key={i}
                 onClick={() => setFilter(category)}
-                className={`text-size-16 xl:text-size-20 font-semibold cursor-pointer text-nowrap ${
+                className={`cursor-pointer text-nowrap text-size-16 font-semibold xl:text-size-20 ${
                   category === filter
-                    ? "text-secondary border-b-4 border-secondary pb-2"
+                    ? "border-b-4 border-secondary pb-2 text-secondary"
                     : ""
                 }`}
               >
@@ -42,12 +42,12 @@ const FeaturedProjects = () => {
             ))}
           </div>
         </div>
-        <div className="mt-4 lg:mt-12 flex gap-4 overflow-x-scroll no-scrollbar">
+        <div className="mt-4 flex gap-4 overflow-x-scroll no-scrollbar lg:mt-12">
           {displayedProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-        <div className="flex gap-2.5 items-center justify-end mt-6 cursor-not-allowed">
+        <div className="mt-6 flex cursor-not-allowed items-center justify-end gap-2.5">
           <p className="tex-size-20 font-semibold text-black">
             Explore All Projects
           </p>
